@@ -1,0 +1,209 @@
+#include "pch.h"
+#include <iostream>
+
+class PersonData {
+
+	std::string lastName;
+	std::string firstName;
+	std::string address;
+	std::string city;
+	std::string state;
+	int zip;
+	int phone;
+
+public:
+
+	PersonData() {
+
+		lastName = "NULL";
+		firstName = "NULL";
+		address = "NULL";
+		city = "NULL";
+		state = "NULL";
+		zip = 0;
+		phone = 0;
+
+	}
+
+	PersonData(std::string lastNameIn, std::string firstNameIn, std::string addressIn, std::string cityIn, std::string stateIn, int zipIn, int phoneIn) {
+
+		lastName = lastNameIn;
+		firstName = firstNameIn;
+		address = addressIn;
+		city = cityIn;
+		state = stateIn;
+		zip = zipIn;
+		phone = phoneIn;
+
+
+	}
+
+	std::string getLastName() {
+
+		return lastName;
+
+	}
+
+	std::string getFirstName() {
+
+		return firstName;
+	}
+
+	std::string getAddress() {
+
+		return address;
+	}
+	std::string getCity() {
+
+		return city;
+	}
+
+	std::string getState() {
+
+		return state;
+
+	}
+
+	int getZip() {
+
+		return zip;
+
+	}
+
+	int getPhone() {
+
+		return phone;
+
+	}
+
+	void setLastName(std::string input) {
+
+		lastName = input;
+
+	}
+
+	void setFirstName(std::string input) {
+
+		firstName = input;
+
+	}
+
+	void setAddress(std::string input) {
+
+		address = input;
+
+	}
+
+	void setCity(std::string input) {
+
+		city = input;
+
+	}
+
+	void setState(std::string input) {
+
+		state = input;
+
+	}
+
+	void setZip(int input) {
+
+		zip = input;
+
+	}
+
+	void setPhone(int input) {
+
+		phone = input;
+
+	}
+
+	void printPersonData() {
+
+		printf("Last name: %s\n", lastName.c_str());
+		printf("First name: %s\n", firstName.c_str());
+		printf("Address: %s\n", address.c_str());
+		printf("City: %s\n", city.c_str());
+		printf("State: %s\n", state.c_str());
+		std::cout << "Last Name: " << zip << std::endl;
+		std::cout << "Last Name: " << phone << std::endl;
+
+	}
+
+};
+
+class CustomerData : public PersonData {
+
+	int customerNumber;
+	bool mailingList;
+
+public:
+
+	CustomerData() {
+
+		customerNumber = 0;
+		bool mailingList = false;
+
+	}
+
+	CustomerData(int cNInput, bool mLInput) : PersonData("Smith", "John", "726 Jackson PI NW", "DC", "Washinton", 20506, 5555555) {
+
+		customerNumber = cNInput;
+		mailingList = mLInput;
+
+	}
+
+	int getCustomerNumber() {
+
+		return customerNumber;
+
+	}
+
+	void setCustomerNumber(int input) {
+
+		customerNumber = input;
+
+	}
+
+	bool getMailingList() {
+
+		return mailingList;
+
+	}
+
+	void setMailingList(bool input) {
+
+		mailingList = input;
+
+	}
+
+	void printCustomerData() {
+
+		std::string trueOrFalse;
+
+		if (mailingList == true) {
+
+			trueOrFalse = "True";
+
+		}
+		else {
+
+			trueOrFalse = "False";
+		}
+
+		std::cout << "Customer Number: " << customerNumber << std::endl;
+		printf("Mailing List: %s\n", trueOrFalse.c_str());
+
+	}
+
+};
+
+int main()
+{
+	
+	CustomerData customerOne;
+	customerOne.setCustomerNumber(123456789);
+	customerOne.setMailingList(false);
+	customerOne.printCustomerData();
+
+}
