@@ -146,7 +146,7 @@ public:
 
 	}
 
-	CustomerData(int cNInput, bool mLInput) : PersonData("Smith", "John", "726 Jackson PI NW", "DC", "Washinton", 20506, 5555555555) {
+	CustomerData(int cNInput, bool mLInput) : PersonData("Smith", "John", "726 Jackson PI NW", "DC", "Washinton", 20506, 5555555) {
 
 		customerNumber = cNInput;
 		mailingList = mLInput;
@@ -177,11 +177,23 @@ public:
 
 	}
 
-	void printCustomerNumber() {
+	void printCustomerData() {
+
+		std::string trueOrFalse;
+
+		if (mailingList == true) {
+
+			trueOrFalse = "True";
+
+		}
+		else {
+
+			trueOrFalse = "False";
+		}
 
 		std::cout << "Customer Number: " << customerNumber << std::endl;
-		std::cout << "Mailing List: " << mailingList << std::endl;
-	
+		printf("Mailing List: %s\n", trueOrFalse.c_str());
+
 	}
 
 };
